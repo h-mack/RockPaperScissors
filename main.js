@@ -20,22 +20,18 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "Draw!";
   }
-  if (playerSelection === "rock" && computerSelection == "paper") {
-    return "You lose!";
-  }
-  if (playerSelection === "rock" && computerSelection == "scissors") {
+  if (
+    (playerSelection === "rock" && computerSelection == "scissors") ||
+    (playerSelection === "paper" && computerSelection == "rock") ||
+    (playerSelection === "scissors" && computerSelection == "paper")
+  ) {
     return "You win!";
   }
-  if (playerSelection === "paper" && computerSelection == "rock") {
-    return "You win!";
-  }
-  if (playerSelection === "paper" && computerSelection == "scissors") {
-    return "You lose!";
-  }
-  if (playerSelection === "scissors" && computerSelection == "paper") {
-    return "You win!";
-  }
-  if (playerSelection === "scissors" && computerSelection == "rock") {
+  if (
+    (playerSelection === "rock" && computerSelection == "paper") ||
+    (playerSelection === "paper" && computerSelection == "scissors") ||
+    (playerSelection === "scissors" && computerSelection == "rock")
+  ) {
     return "You lose!";
   }
   return "An error occurred"
